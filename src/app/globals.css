@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #faf7f1;
+  --color-paper: #fffdf9;
+  --color-forest: #12433d;
+  --color-forest-deep: #0d312d;
+  --color-forest-soft: #1c5a52;
+  --color-sage: #a9b8a6;
+  --color-sage-soft: #e7ece3;
+  --color-champagne: #c9ae82;
+  --color-champagne-soft: #f3ecdf;
+  --color-charcoal: #22282a;
+  --color-muted: #535e5c;
+  --color-line: #e2ddd2;
+  --color-danger: #a12d22;
+
+  --font-sans: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-newsreader), Georgia, "Times New Roman", serif;
+
+  --shadow-card: 0 1px 2px rgb(18 67 61 / 0.05), 0 8px 24px -16px rgb(18 67 61 / 0.25);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--color-ivory);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+    line-height: 1.65;
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -0.012em;
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-forest);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .on-dark :focus-visible {
+    outline-color: var(--color-champagne-soft);
+  }
+
+  dialog::backdrop {
+    background: rgb(13 49 45 / 0.72);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
