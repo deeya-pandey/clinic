@@ -5,7 +5,7 @@ export function HeroSection() {
   const { hero } = home;
   return (
     <section className="overflow-hidden">
-      <Container className="grid items-center gap-10 py-10 lg:grid-cols-[1.25fr_1fr] lg:gap-14 lg:py-16">
+      <Container className="grid items-center gap-10 py-10 lg:grid-cols-[1fr_1.15fr] lg:gap-14 lg:py-16">
         <div>
           <Eyebrow>{hero.eyebrow}</Eyebrow>
           <h1 className="text-5xl sm:text-6xl xl:text-7xl">{hero.title}</h1>
@@ -18,10 +18,10 @@ export function HeroSection() {
           </div>
         </div>
         <SiteImageFrame
-          image="doctorPortrait"
+          image="consultationNotes"
           priority
-          sizes="(min-width: 640px) 28rem, 100vw"
-          className="mx-auto aspect-[4/5] w-full max-w-md"
+          sizes="(min-width: 1024px) 55vw, 100vw"
+          className="aspect-[4/3] lg:aspect-[5/4]"
         />
       </Container>
     </section>
